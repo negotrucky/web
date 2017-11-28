@@ -34,6 +34,12 @@
 			</p>
 		</section>
 	</div>
+	
+
+	<div id="editor">
+  		<textarea :value="input" @input="update"></textarea>
+  		<div v-html="compiledMarkdown"></div>
+	</div>
 	<!-- Footer -->
 	<div id="footer-wrapper">
 		<!-- Links -->
@@ -54,8 +60,28 @@
 
 
 <!-- Scripts -->
+<script src="https://unpkg.com/marked@0.3.6"></script>
+<script src="https://unpkg.com/lodash@4.16.0"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+	new Vue({
+	  el: '#editor',
+	  data: {
+	    input: '# hello'
+	  },
+	  computed: {
+	    compiledMarkdown: function () {
+	      return marked(this.input, { sanitize: true })
+	    }
+	  },
+	  methods: {
+	    update: _.debounce(function (e) {
+	      this.input = e.target.value
+	    }, 300)
+	  }
+	})
+</script>
 
 </body></html>

@@ -36,10 +36,7 @@
 	</div>
 	
 
-	<div id="editor">
-  		<textarea :value="input" @input="update"></textarea>
-  		<div v-html="compiledMarkdown"></div>
-	</div>
+
 	<!-- Footer -->
 	<div id="footer-wrapper">
 		<!-- Links -->
@@ -58,6 +55,11 @@
 		&copy; Untitled. All rights reserved.
 	</div>
 
+	
+	<div id="editor">
+  		<textarea :value="input" @input="update"></textarea>
+  		<div v-html="compiledMarkdown"></div>
+	</div>
 
 <!-- Scripts -->
 <script src="https://unpkg.com/marked@0.3.6"></script>

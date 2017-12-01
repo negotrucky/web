@@ -81,10 +81,16 @@
 import jsonData from 'files/data.json';
 new Vue({
 	el: '#demoList',
-  data: function () {
-  	return {
-    	jsonData
-		}
+  data: {
+  	title: false,
+    tags: false,
+		links: false,
+		error:false
+    },
+	ready: function() {
+  	this.$set('title', jsonData.title),
+		this.$set('tags', jsonData.tags),
+		this.$set('links', jsonData.links)
 	}
 });
 </script>

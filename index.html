@@ -4,95 +4,29 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
-	<link rel="stylesheet" href="css/main.css" />
 </head><body>
-	<!-- Header -->
-	<div id="header-wrapper">
-		<header id="header" class="container">
-		<!-- Logo -->
-			<h1><a href="#" id="logo">WIP</a></h1>
-			<!-- Nav -->
-			<nav id="nav">
-				<a href="index.html">Homepage</a>
-			</nav>							
-		</header>
-		<div id="banner">
-			<div class="container">
-			</div>
-		</div>
-	</div>
-	<!-- Content -->
-	<div id="content-wrapper">
-		<!-- Box #1 -->
-		<section>
-			<div id="demoList">
-  				<h1>link list</h1>
-				  <ul>
-					<li v-for="item in items">
-					  - <span class="message">{{item.title}}</span><br>
-					  <span class="author">{{item.tags}}</span>
-					  <span class="date">{{item.links}}</span>
-					</li>
-				</ul>
-			</div>
-			<header>
-				<h2>Hello</h2>
-				<h3>hello message</h3>
-			</header>
-			<p>
-				Little message
-			</p>
-		</section>
-	</div>
-	
 
-
-	<!-- Footer -->
-	<div id="footer-wrapper">
-		<!-- Links -->
-		<section>
-			<h2>Links to Important Stuff</h2>
-			<div>
-				<ul class="link-list last-child">
-					<li><a href="#">Neque amet dapibus</a></li>
-				</ul>
-			</div>
-		</section>
-	</div>
-		
-	<!-- Copyright -->
-	<div id="copyright">
-		&copy; Untitled. All rights reserved.
-	</div>
-
-	
-	<div id="editor">
-  		<textarea :value="input" @input="update"></textarea>
-  		<div v-html="compiledMarkdown"></div>
-	</div>
+<div id="demoList">
+	<h1>link list</h1>
+	  <ul>
+		<li v-for="link in links">
+		  - <span class="message">{{link.title}}</span><br>
+		  <span class="author">{{link.tags}}</span>
+		  <span class="date">{{link.links}}</span>
+		</li>
+	</ul>
+</div>
 
 <!-- Scripts -->
-<script src="https://unpkg.com/marked@0.3.6"></script>
-<script src="https://unpkg.com/lodash@4.16.0"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.min.js"></script>
-<script src="js/main.js"></script>
 <script>
 import jsonData from 'files/data.json';
 new Vue({
 	el: '#demoList',
   data: {
-  	title: false,
-    tags: false,
-		links: false,
-		error:false
-    },
-	ready: function() {
-  	this.$set('title', jsonData.title),
-		this.$set('tags', jsonData.tags),
-		this.$set('links', jsonData.links)
-	}
+		links : jsonData
+  }
 });
 </script>
-
 </body></html>

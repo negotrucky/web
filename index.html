@@ -5,38 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
 	<link rel="stylesheet" href="css/main.css" />
-	<style>
-		html, body, #editor {
-  margin: 0;
-  height: 100%;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
-}
-
-textarea, #editor div {
-  display: inline-block;
-  width: 49%;
-  height: 100%;
-  vertical-align: top;
-  box-sizing: border-box;
-  padding: 0 20px;
-}
-
-textarea {
-  border: none;
-  border-right: 1px solid #ccc;
-  resize: none;
-  outline: none;
-  background-color: #f6f6f6;
-  font-size: 14px;
-  font-family: 'Monaco', courier, monospace;
-  padding: 20px;
-}
-
-code {
-  color: #f66;
-}
-	</style>
 </head><body>
 	<!-- Header -->
 	<div id="header-wrapper">
@@ -57,6 +25,16 @@ code {
 	<div id="content-wrapper">
 		<!-- Box #1 -->
 		<section>
+			<div id="demoList">
+  				<h1>link list</h1>
+				  <ul>
+					<li v-for="item in items">
+					  - <span class="message">{{item.title}}</span><br>
+					  <span class="author">{{item.tags}}</span>
+					  <span class="date">{{item.links}}</span>
+					</li>
+				</ul>
+			</div>
 			<header>
 				<h2>Hello</h2>
 				<h3>hello message</h3>
@@ -100,22 +78,16 @@ code {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.min.js"></script>
 <script src="js/main.js"></script>
 <script>
-	new Vue({
-	  el: '#editor',
-	  data: {
-	    input: '# hello'
-	  },
-	  computed: {
-	    compiledMarkdown: function () {
-	      return marked(this.input, { sanitize: true })
-	    }
-	  },
-	  methods: {
-	    update: _.debounce(function (e) {
-	      this.input = e.target.value
-	    }, 300)
-	  }
-	})
+	import jsonData from 'files/data.json';
+new Vue({
+  el: '#demoList',
+  data: function () {
+    return {
+        jsonData,
+		}
+	}
+  }
+});
 </script>
 
 </body></html>

@@ -5,6 +5,7 @@
   {"title": "moteur 3D", "tags":["3D"], "links":["https://github.com/smdls/C0"]},
   {"title": "A écouter", "tags":["zic"], "links":["https://themidnight.bandcamp.com/track/crystalline"]},
   {"title": "Ha Winamp :)", "tags":["winamp, js"], "links":["https://github.com/captbaritone/winamp2-js"]},
-  {"title": "scap web as tree", "tags":["web, scap^, ui"], "links":["https://github.com/CIRCL/lookyloo"]},
-  {"title": "Symfony api tuto", "tags":["php, api, tuto"], "links":["https://medium.com/@koyaan5/"]}
+  {"title": "scap web as tree", "tags":["web, scrap, ui"], "links":["https://github.com/CIRCL/lookyloo"]},
+  {"title": "Symfony api tuto", "tags":["php, api, tuto"], "links":["https://medium.com/@koyaan5/"]},
+  {"title": "risque management programme", "tags":["management, risque"], "links":["https://www.imperva.com/blog/2017/09/building-a-security-risk-management-program/"]}
 ]
